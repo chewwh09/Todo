@@ -21,6 +21,8 @@ class _ToDoItemState extends State<ToDoItem> {
       return Colors.red[700];
     } else if (timeDifference < 4) {
       return Colors.red[300];
+    } else {
+      return Colors.transparent;
     }
   }
 

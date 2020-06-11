@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/AppDrawer.dart';
-
 class TimeTableScreen extends StatelessWidget {
   static const routeName = '/timetable-screen';
 
