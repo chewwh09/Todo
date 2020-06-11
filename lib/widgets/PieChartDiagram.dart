@@ -6,7 +6,7 @@ import '../models/ToDo.dart';
 class PieChartDiagram extends StatefulWidget {
   final List<ToDo> completedTask;
   final List<ToDo> userToDo;
-  Key key; //The key is for the parent widget ToDoScreen. So whenever adding/deleting, the piechart will reload.
+  final Key key; //The key is for the parent widget ToDoScreen. So whenever adding/deleting, the piechart will reload.
 
   PieChartDiagram(this.completedTask, this.userToDo, this.key);
 
