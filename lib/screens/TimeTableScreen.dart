@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 
-import '../models/Event.dart';
-import '../models/Day.dart';
+import '../widgets/Event.dart';
+import '../widgets/Day.dart';
 import '../models/NewEvent.dart';
 
 class TimeTableScreen extends StatefulWidget {
   static const routeName = '/TimeTableScreen';
-
-  
-  final List<Pair> days;
+  final days;
   TimeTableScreen(this.days);
   @override
-  _TimeTableState createState() => _TimeTableState(days);
+  _TimeTableState createState() => _TimeTableState();
 
 }
 
 class _TimeTableState extends State<TimeTableScreen> {
-  List<Pair> days;
-  _TimeTableState(this.days);
-
   void startAddNewEvent(BuildContext cxt) {
     showModalBottomSheet(
         context: cxt,
@@ -30,13 +25,19 @@ class _TimeTableState extends State<TimeTableScreen> {
           );
         });
   }
+  @override
+  void requestRebuild() {
+  if(mounted) setState(() {});
+}
 
   void _delete(String id) {
-      if(!mounted) return;
       setState(() {
         for (int i = 0; i < 7; i++) {
           widget.days[i].events.removeWhere((x) => x.id == id);
         }
+      });
+      setState(() {
+        
       });
   }
 
@@ -68,7 +69,7 @@ class _TimeTableState extends State<TimeTableScreen> {
         ),
         body: ListView.builder(
             itemBuilder: (ctx, index) {
-              return Day(widget.days[index].weekday, days[index].events);
+              return Day(widget.days[index].weekday, widget.days[index].events);
             },
             itemCount: widget.days.length));
   }
