@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../models/ToDo.dart';
+import 'package:actual/models/ToDo.dart';
 
 class ToDoItem extends StatefulWidget {
   final ToDo toDo;

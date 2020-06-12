@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/AppDrawer.dart';
+import '../widgets/ToDoList/AppDrawer.dart';
 import '../models/ToDo.dart';
-import '../widgets/NewToDoItem.dart';
-import '../widgets/PieChartDiagram.dart';
-import '../widgets/ToDoItem.dart';
+import '../widgets/ToDoList/NewToDoItem.dart';
+import '../widgets/ToDoList/PieChartDiagram.dart';
+import '../widgets/ToDoList/ToDoItem.dart';
 
 class ToDoScreen extends StatefulWidget {
   static const routeName = '/todo-screen';

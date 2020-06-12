@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/InspirationalQuote.dart';
-import '../widgets/HomePageBlock.dart';
+import '../widgets/HomePage/InspirationalQuote.dart';
+import '../widgets/HomePage/HomePageBlock.dart';
 import '../screens/ToDoScreen.dart';
 import 'TimeTableScreen.dart';
 

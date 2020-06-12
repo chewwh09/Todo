@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/Event.dart';
+import 'package:actual/models/Event.dart';
 
 class EventWidget extends StatelessWidget {
   final Event currentEvent;

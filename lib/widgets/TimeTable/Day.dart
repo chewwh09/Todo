@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/Event.dart';
+import 'package:actual/models/Event.dart';
 import 'Event.dart';
 
 class Day extends StatelessWidget {

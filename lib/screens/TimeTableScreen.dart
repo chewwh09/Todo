@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/Event.dart';
-import '../widgets/Day.dart';
-import '../widgets/NewEvent.dart';
+import '../widgets/TimeTable/Event.dart';
+import '../widgets/TimeTable/Day.dart';
+import '../widgets/TimeTable/NewEvent.dart';
 import '../models/Event.dart';
 
 class TimeTableScreen extends StatefulWidget {

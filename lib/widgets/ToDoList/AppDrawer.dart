@@ -1,7 +1,8 @@
-import 'package:actual/screens/CompletedTaskScreen.dart';
 import 'package:flutter/material.dart';
 
-import '../screens/ToDoScreen.dart';
+import 'package:actual/screens/CompletedTaskScreen.dart';
+import 'package:actual/screens/ToDoScreen.dart';
+
 
 class AppDrawer extends StatelessWidget {
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 
-import '../models/ToDo.dart';
+import 'package:actual/models/ToDo.dart';
 
 class PieChartDiagram extends StatefulWidget {
   final List<ToDo> completedTask;

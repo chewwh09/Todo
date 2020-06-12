@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/InspirationalQuotes.dart';
+import 'package:actual/models/InspirationalQuotes.dart';
 
 class InspirationalQuote extends StatelessWidget {
   final String quote = InspirationalQuotes.uniqueQuote;
