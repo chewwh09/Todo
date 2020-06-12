@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../widgets/InspirationalQuote.dart';
 import '../widgets/HomePageBlock.dart';
-import '../screens/TimeTableScreen.dart';
 import '../screens/ToDoScreen.dart';
+import 'TimeTableScreen.dart';
 
 class HomePageScreen extends StatelessWidget {
   @override
@@ -68,7 +68,7 @@ class HomePageScreen extends StatelessWidget {
                   blockName: 'Timetable',
                   blockColor: Colors.orangeAccent,
                   iconDisplay: Icon(Icons.schedule),
-                  routingLocation: TimeTableScreen.routeName,
+                  routingLocation: TimeTableScreen.routeName
                 ),
                 HomePageBlock(
                     blockName: 'Sticky Notes',
