@@ -12,7 +12,7 @@ class EventWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Text(this.currentEvent.time.format(context)),
-      title: Text(this.currentEvent.title),
+      title: Text(this.currentEvent.title,),
       subtitle: Text(this.currentEvent.place),
       trailing: IconButton(
           icon: Icon(Icons.delete),
