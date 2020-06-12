@@ -34,6 +34,16 @@ class MyApp extends StatelessWidget {
         date: DateTime.now(), title: 'DeleteTesting1', id: DateTime.now().toString()),
   ];
 
+  final List<Pair> _days = [
+    Pair("Monday", []),
+    Pair("TuesDay", []),
+    Pair("Wednesday", []),
+    Pair("Thursday", []),
+    Pair("Friday", []),
+    Pair("Saturday", []),
+    Pair("Sunday", []),
+  ];
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -48,7 +58,7 @@ class MyApp extends StatelessWidget {
       home: HomePageScreen(),
       routes: {
         ToDoScreen.routeName: (ctx) => ToDoScreen(_userToDo, _completedTask),
-        TimeTableScreen.routeName: (ctx) => TimeTableScreen(),
+        TimeTableScreen.routeName: (ctx) => TimeTableScreen(_days),
         CompletedTaskScreen.routeName: (ctx) => CompletedTaskScreen(_completedTask),
       },
     );

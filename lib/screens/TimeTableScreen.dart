@@ -7,22 +7,17 @@ import '../models/NewEvent.dart';
 class TimeTableScreen extends StatefulWidget {
   static const routeName = '/TimeTableScreen';
 
-  TimeTableScreen({Key key, this.title}) : super(key: key);
-  final String title;
+  
+  final List<Pair> days;
+  TimeTableScreen(this.days);
   @override
-  _TimeTableState createState() => _TimeTableState();
+  _TimeTableState createState() => _TimeTableState(days);
+
 }
 
 class _TimeTableState extends State<TimeTableScreen> {
-  static List<Pair> days = [
-    Pair("Monday", []),
-    Pair("TuesDay", []),
-    Pair("Wednesday", []),
-    Pair("Thursday", []),
-    Pair("Friday", []),
-    Pair("Saturday", []),
-    Pair("Sunday", []),
-  ];
+  List<Pair> days;
+  _TimeTableState(this.days);
 
   void startAddNewEvent(BuildContext cxt) {
     showModalBottomSheet(
@@ -37,26 +32,26 @@ class _TimeTableState extends State<TimeTableScreen> {
   }
 
   void _delete(String id) {
-    setState(() {
-      for (int i = 0; i < 7; i++) {
-        days[i].events.removeWhere((x) => x.id == id);
-      }
-    });
+      if(!mounted) return;
+      setState(() {
+        for (int i = 0; i < 7; i++) {
+          widget.days[i].events.removeWhere((x) => x.id == id);
+        }
+      });
   }
 
   int compareTime(Event a, Event b) {
     double timeA = a.time.hour + a.time.minute / 60.0;
     double timeB = b.time.hour + b.time.minute / 60.0;
-    print("...");
     return timeA > timeB ? 1 : -1;
   }
 
   void addNewEvent(String title, TimeOfDay time, String place, int day) {
     setState(() {
-      days[day]
+      widget.days[day]
           .events
           .add(Event(DateTime.now().toString(), title, time, place, _delete));
-      days[day].events.sort((a, b) => compareTime(a, b));
+      widget.days[day].events.sort((a, b) => compareTime(a, b));
     });
   }
 
@@ -73,9 +68,9 @@ class _TimeTableState extends State<TimeTableScreen> {
         ),
         body: ListView.builder(
             itemBuilder: (ctx, index) {
-              return Day(days[index].weekday, days[index].events);
+              return Day(widget.days[index].weekday, days[index].events);
             },
-            itemCount: days.length));
+            itemCount: widget.days.length));
   }
 }
 
