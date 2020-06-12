@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../widgets/Event.dart';
 import '../widgets/Day.dart';
-import '../models/NewEvent.dart';
+import '../widgets/NewEvent.dart';
+import '../models/Event.dart';
 
 class TimeTableScreen extends StatefulWidget {
   static const routeName = '/TimeTableScreen';
@@ -25,10 +26,6 @@ class _TimeTableState extends State<TimeTableScreen> {
           );
         });
   }
-  @override
-  void requestRebuild() {
-  if(mounted) setState(() {});
-}
 
   void _delete(String id) {
       setState(() {
@@ -36,14 +33,11 @@ class _TimeTableState extends State<TimeTableScreen> {
           widget.days[i].events.removeWhere((x) => x.id == id);
         }
       });
-      setState(() {
-        
-      });
   }
 
-  int compareTime(Event a, Event b) {
-    double timeA = a.time.hour + a.time.minute / 60.0;
-    double timeB = b.time.hour + b.time.minute / 60.0;
+  int compareTime(EventWidget a, EventWidget b) {
+    double timeA = a.currentEvent.time.hour + a.currentEvent.time.minute / 60.0;
+    double timeB = b.currentEvent.time.hour + b.currentEvent.time.minute / 60.0;
     return timeA > timeB ? 1 : -1;
   }
 
@@ -51,7 +45,7 @@ class _TimeTableState extends State<TimeTableScreen> {
     setState(() {
       widget.days[day]
           .events
-          .add(Event(DateTime.now().toString(), title, time, place, _delete));
+          .add(Event(DateTime.now().toString(), title, time, place));
       widget.days[day].events.sort((a, b) => compareTime(a, b));
     });
   }
@@ -69,7 +63,7 @@ class _TimeTableState extends State<TimeTableScreen> {
         ),
         body: ListView.builder(
             itemBuilder: (ctx, index) {
-              return Day(widget.days[index].weekday, widget.days[index].events);
+              return Day(widget.days[index].weekday, widget.days[index].events, _delete);
             },
             itemCount: widget.days.length));
   }

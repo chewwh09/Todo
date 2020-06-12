@@ -1,27 +1,23 @@
-
 import 'package:flutter/material.dart';
 
-class Event extends StatelessWidget {
-  final String id;
-  final String title;
-  final TimeOfDay time;
-  final String place;
+import '../models/Event.dart';
+
+class EventWidget extends StatelessWidget {
+  final Event currentEvent;
   final Function deleteEvent;
 
-  Event(this.id ,this.title, this.time, this.place, this.deleteEvent);
+  EventWidget(this.currentEvent, this.deleteEvent);
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Text(this.time.format(context)),
-      title: Text(this.title),
-      subtitle: Text(this.place),
+      leading: Text(this.currentEvent.time.format(context)),
+      title: Text(this.currentEvent.title),
+      subtitle: Text(this.currentEvent.place),
       trailing: IconButton(
-                      icon: Icon(Icons.delete),
-                      color: Theme.of(context).errorColor,
-                      onPressed: ()=> deleteEvent(this.id)),
-                    );
-        
-      }
-      
-
+          icon: Icon(Icons.delete),
+          color: Theme.of(context).errorColor,
+          onPressed: () => deleteEvent(this.currentEvent.id)),
+    );
+  }
 }
