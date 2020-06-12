@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Event extends StatelessWidget {
-  String id;
-  String title;
-  TimeOfDay time;
-  String place;
-  String day;
-  Function deleteEvent;
+  final String id;
+  final String title;
+  final TimeOfDay time;
+  final String place;
+  final Function deleteEvent;
 
   Event(this.id ,this.title, this.time, this.place, this.deleteEvent);
   @override

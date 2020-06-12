@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class NewEvent extends StatefulWidget {
   final Function add;
@@ -24,7 +23,6 @@ class NewEventState extends State<NewEvent> {
       return;
     }
     final newTitile = titleController.text;
-    final newPlace = placeController.text;
     int d = map[weekday];
 
     widget.add(
@@ -47,7 +45,6 @@ class NewEventState extends State<NewEvent> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     
     var weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     return Card(

@@ -90,8 +90,8 @@ class _ToDoScreenState extends State<ToDoScreen> {
                   Positioned.fill(
                       child: ClipRRect(
                     borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(80),
-                        bottomRight: Radius.circular(80)),
+                        bottomLeft: Radius.circular(50),
+                        bottomRight: Radius.circular(50)),
                     child: Image.asset(
                       'assets/images/ToDoScreenAppBar.jpg',
                       fit: BoxFit.cover, //can be Boxfit.fill
