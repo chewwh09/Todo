@@ -14,7 +14,6 @@ class CompletedTaskScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.blueGrey[200],
-        // drawer: AppDrawer(),
         appBar: AppBar(
             backgroundColor: Colors.grey[200],
             title: Text('Completed Tasks',

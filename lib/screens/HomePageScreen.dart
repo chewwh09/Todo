@@ -8,7 +8,6 @@ import 'TimeTableScreen.dart';
 class HomePageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // The container is for adding the background image if you want, for now not using so can delete
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(

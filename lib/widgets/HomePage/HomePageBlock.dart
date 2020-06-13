@@ -60,14 +60,3 @@ class HomePageBlock extends StatelessWidget {
     );
   }
 }
-
-// Container(
-//                 decoration: BoxDecoration(
-//                     image: const DecorationImage(
-//                         image: AssetImage(
-//                             'assets/images/HomePageBlockPicture.jpg'),
-//                         fit: BoxFit.fill)),
-//                 padding: EdgeInsets.only(top: 60),
-//                 // color: blockColor,
-//                 child: FittedBox(fit: BoxFit.contain, child: iconDisplay),
-//               ),

@@ -57,10 +57,6 @@ class _ToDoItemState extends State<ToDoItem> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 color: colorCode(widget.toDo.date),
-                // image: const DecorationImage(
-                //     image: NetworkImage(
-                //         'https://upload.wikimedia.org/wikipedia/commons/3/37/Empty_book.jpg'),
-                //     fit: BoxFit.fitHeight)
               ),
               height: 50,
               width: 70,
@@ -89,8 +85,6 @@ class _ToDoItemState extends State<ToDoItem> {
                 widget.removeItem(widget.toDo.id);
                 widget.completed(widget.toDo);
                 Scaffold.of(context).showSnackBar(addedSnackBar);
-                // Below is a stupid way to "refresh the pie chart"
-                // Navigator.of(context).popAndPushNamed(ToDoScreen.routeName);
               },
             ),
           )),

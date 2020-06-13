@@ -84,7 +84,6 @@ class NewEventState extends State<NewEvent> {
             textColor: Colors.black,
             onPressed: submit,
           )
-
         ],),),
     );
   }
