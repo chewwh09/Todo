@@ -51,7 +51,7 @@ class _ToDoItemState extends State<ToDoItem> {
       child: Card(
           color: Colors.yellow[200],
           margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
-          elevation: 5,
+          elevation: 10,
           child: ListTile(
             leading: Container(
               decoration: BoxDecoration(

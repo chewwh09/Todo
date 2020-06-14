@@ -61,16 +61,15 @@ class _ToDoScreenState extends State<ToDoScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       drawer: AppDrawer(),
-      floatingActionButton: FloatingActionButton(
-        elevation: 20,
-        child: Icon(Icons.add),
-        onPressed: () => _startAddNewToDoItem(context),
-        backgroundColor: Colors.greenAccent,
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            actions: <Widget>[
+              GestureDetector(
+                  onTap: () => _startAddNewToDoItem(context),
+                  child: Icon(Icons.add, color: Colors.black, size: 30)),
+                  SizedBox(width:10)
+            ],
             backgroundColor: Colors.transparent,
             iconTheme: new IconThemeData(color: Colors.green, size: 20),
             centerTitle: false,

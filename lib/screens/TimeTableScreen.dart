@@ -52,7 +52,7 @@ class _TimeTableState extends State<TimeTableScreen> {
   }
 
   Image appBarImage(BuildContext context) {
-    // int hour = DateTime.parse("2020-06-13 18:00:04Z").hour;
+    // int hour = DateTime.parse("2020-06-13 17:00:04Z").hour;
     int hour = DateTime.now().hour;
     String imageUrl;
 

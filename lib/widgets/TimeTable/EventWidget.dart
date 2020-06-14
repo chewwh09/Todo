@@ -71,32 +71,34 @@ class _EventWidgetState extends State<EventWidget> {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(50),
         child: Card(
+            elevation: 50,
+            color: Colors.blue[50],
             child: ListTile(
-          title: Text(
-            this.widget.currentEvent.title,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-          subtitle: Text(
-            this.widget.currentEvent.place,
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          trailing: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: Colors.transparent,
-              border: Border.all(color: Colors.red),
-            ),
-            width: MediaQuery.of(context).size.width * 0.2,
-            height: MediaQuery.of(context).size.height,
-            child: Center(
-              child: Text(
-                this.widget.currentEvent.time.format(context),
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              title: Text(
+                this.widget.currentEvent.title,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
-            ),
-          ),
-        )),
+              subtitle: Text(
+                this.widget.currentEvent.place,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              trailing: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.blue[300],
+                  // border: Border.all(color: Colors.red),
+                ),
+                width: MediaQuery.of(context).size.width * 0.2,
+                height: MediaQuery.of(context).size.height,
+                child: Center(
+                  child: Text(
+                    this.widget.currentEvent.time.format(context),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            )),
       ),
     );
   }
