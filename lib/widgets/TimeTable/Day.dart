@@ -15,7 +15,7 @@ class Day extends StatelessWidget {
         radius: selectedDay == id ? 30 : 22,
         backgroundColor: selectedDay == id
             ? Colors.greenAccent
-            : Colors.yellow[400],
+            : Colors.yellow[300],
         child: Text(
           weekday[0] + weekday[1],
           style: TextStyle(

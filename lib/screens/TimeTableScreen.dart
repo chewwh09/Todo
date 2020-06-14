@@ -52,8 +52,8 @@ class _TimeTableState extends State<TimeTableScreen> {
   }
 
   Image appBarImage(BuildContext context) {
-    // int hour = DateTime.parse("2020-06-13 17:00:04Z").hour;
-    int hour = DateTime.now().hour;
+    int hour = DateTime.parse("2020-06-13 18:00:04Z").hour;
+    // int hour = DateTime.now().hour;
     String imageUrl;
 
     if (hour >= 6 && hour <= 11) imageUrl = 'assets/images/Sunrise.jpg';
@@ -105,6 +105,7 @@ class _TimeTableState extends State<TimeTableScreen> {
             child: SingleChildScrollView(
                 child: Column(
               children: <Widget>[
+                SizedBox(height:10),
                 for (int i = 0;
                     i < widget.days[widget.selectedDay].events.length;
                     i++)
