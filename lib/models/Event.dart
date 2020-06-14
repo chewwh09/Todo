@@ -8,5 +8,3 @@ class Event {
 
   Event(this.id, this.title, this.time, this.place);
 }
-
-//hello
